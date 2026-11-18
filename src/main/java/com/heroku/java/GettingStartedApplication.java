@@ -29,6 +29,7 @@ public class GettingStartedApplication {
 
     @GetMapping("/database")
     String database(Map<String, Object> model) throws SQLException {
+        System.out.println("Broden Benson");
         try (Connection connection = dataSource.getConnection()) {
             final var statement = connection.createStatement();
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
